@@ -8,7 +8,7 @@ public class Collatz {
     public static void secuencia(Integer name){
         if (name==1) {
             archivo(Integer.toString(name));
-            json(String respuesta, String inicial);
+            json(respuesta, inicial);
         } else if (name%2==1) {
             archivo(Integer.toString(name));
             name = (name*3)+1;
