@@ -3,8 +3,7 @@ import static spark.Spark.*;
 
 public class SparkWebServer {
     public static void main(String[] args) {
-        //llamado a la funcione de collatz
-        get("/index", (req, res) -> Collatz.secuencia(req.queryParams(("name"))));
+        get("/index", (req, res) -> Collatz.secuencia(req.queryParams(Integer.valueOf(name))));
     }
 
     static int getPort() {
