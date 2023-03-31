@@ -3,18 +3,21 @@ package org.example;
 
 public class Collatz {
     static String respuesta = "";
+
     static String inicial="";
-    public static void Collatz(Integer num){
-        if (num==1) {
-            archivo(Integer.toString(num));
-        } else if (num%2==1) {
-            archivo(Integer.toString(num));
-            num = (num*3)+1;
-            Collatz(num);
-        } else if (num%2==0) {
-            archivo(Integer.toString(num));
-            num = (num/2);
-            Collatz(num);
+    public static void secuencia(String name){
+        name = Integer.valueOf(name);
+        if (name==1) {
+            archivo(Integer.toString(name));
+            json(String respuesta, String inicial);
+        } else if (name%2==1) {
+            archivo(Integer.toString(name));
+            name = (name*3)+1;
+            Collatz(name);
+        } else if (name%2==0) {
+            archivo(Integer.toString(name));
+            name = (name/2);
+            Collatz(name);
         }
     }
     public static void archivo(String num){

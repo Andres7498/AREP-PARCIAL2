@@ -1,12 +1,10 @@
 package org.example;
-
-import static org.example.HttpConnectionExample.answer;
 import static spark.Spark.*;
 
 public class SparkWebServer {
     public static void main(String[] args) {
         //llamado a la funcione de collatz
-        get("/Collatz", (req, res) -> Collatz(req.queryParams(num)));
+        get("/index", (req, res) -> Collatz.secuencia(req.queryParams(("name"))));
     }
 
     static int getPort() {
